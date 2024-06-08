@@ -164,6 +164,23 @@ skipBtn.addEventListener('click', skipQuestion);
 // Event listener for number categories
 
 
+
+
+
+
+// Function to open the HTML file with information about numbers
+// const openNumberInfoPage = (filePath) => {
+//     // Define the URL to the HTML file for the number category using the local server
+//     const url = `${window.location.origin}/${filePath}`;
+
+//     // Open the HTML file in a new tab
+//     window.open(url, '_blank');
+// };
+
+const openNumberInfoPage = (filepath) => {
+    window.open(filepath)
+}
+
 // Event listener for number categories
 num.addEventListener('click', (event) => {
     const selectedNumber = event.target.textContent.trim();
@@ -230,11 +247,4 @@ num.addEventListener('click', (event) => {
     }
 });
 
-// Function to open the HTML file with information about numbers
-const openNumberInfoPage = (filePath) => {
-    // Define the URL to the HTML file for the number category using the local server
-    const url = `http://localhost:8080/${filePath}`;
 
-    // Open the HTML file in a new tab
-    window.open(url, '_blank');
-};
