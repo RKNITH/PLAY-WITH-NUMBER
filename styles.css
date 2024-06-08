@@ -8,13 +8,15 @@
 body {
     background-color: rgb(24, 29, 17);
     width: 100%;
-    height: 100vh;
+    height: 100%;
     color: rgb(250, 248, 246);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 30px;
     flex-direction: column;
+    overflow-y: auto;
+    /* Allows scrolling */
 }
 
 .container {
@@ -38,7 +40,6 @@ body {
     background-color: #5d9b63;
     padding: 30px;
     border-radius: 4px;
-
 }
 
 #userAnswer {
@@ -51,7 +52,6 @@ body {
     background-color: white;
     transition: all 0.5s;
     color: rgb(19, 10, 1);
-
 }
 
 .btn {
@@ -80,7 +80,6 @@ body {
 .scoreCard {
     font-size: 24px;
     margin-top: 20px;
-
 }
 
 .alert {
@@ -91,7 +90,6 @@ body {
     position: absolute;
     top: 0;
     display: none;
-
 }
 
 .startBtn {
@@ -119,11 +117,8 @@ body {
     animation: pulse 1s ease-in-out infinite;
 }
 
-
-
 @keyframes pulse {
     0% {
-
         transform: scale(1);
     }
 
@@ -134,10 +129,7 @@ body {
     100% {
         transform: scale(1);
     }
-
 }
-
-
 
 @keyframes fade-in {
     0% {
@@ -150,11 +142,6 @@ body {
         transform: translateY(0);
     }
 }
-
-
-
-
-
 
 @media screen and (max-width:900px) {
     .container {
@@ -180,7 +167,6 @@ body {
         width: 50%;
         margin-bottom: 30px;
     }
-
 }
 
 /* ADDING CSS TO NUMBER-INFO */
@@ -188,13 +174,12 @@ body {
 .number-info-container {
     width: 80%;
     max-width: 850px;
-    margin-top: 30px;
+    margin-top: 50px;
     text-align: center;
     display: flex;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
-    /* Center the container */
 }
 
 .number-info-container h2 {
@@ -204,8 +189,7 @@ body {
 
 .number-list {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    /* Arrange 5 items in one row */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
     justify-content: center;
 }
@@ -231,11 +215,9 @@ body {
 @media screen and (max-width: 900px) {
     .number-info-container {
         width: 90%;
-        /* Adjust the width for smaller screens */
     }
 
     .number-list {
-        display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
 }
